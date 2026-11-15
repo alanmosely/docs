@@ -8,12 +8,18 @@ The website and documentation for the [Eleventy static site generator](https://g
 
 ## Running Locally
 
+Use Node.js 22.15 or newer. The data-refresh script uses POSIX shell commands,
+and the production scripts use POSIX environment-variable assignments. On
+Windows, use WSL or configure npm to use a POSIX script shell such as Git Bash.
+
 ```
 npm install
 npm run get-new-data
-npx @11ty/eleventy --serve
+npm start
 ```
 
-Browse to http://localhost:8080/ (8080 is the default but it’ll bump to a new port if that one is taken, so use whatever port shows up when you run the `--serve` command).
+Browse to http://localhost:8091/ (`npm start` sets port 8091; if the server selects
+a different available port, use the address it prints).
 
-- Refresh Supporters: `npm run get-new-supporters`
+Refresh community data with `npm run get-new-data`. There is no
+`get-new-supporters` script in this checkout.
